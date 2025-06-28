@@ -25,6 +25,13 @@ function Notas() {
     setNota("");
   };
 
+  const borrarNota = (index) => {
+  const nuevasNotas = [...listaNotas];
+  nuevasNotas.splice(index, 1);
+  setListaNotas(nuevasNotas);
+};
+
+
   return (
     <div>
       <div className="card">
@@ -36,10 +43,15 @@ function Notas() {
   </div>
 </div>
 
-      <ul className="list-group">
-        <li className=" mt-3 list-group-item active" aria-current="true">Notas Creadas</li>
-        {listaNotas.map((n, index) => (
-          <li className="list-group-item" key={index}>{n}</li>
+    <ul className="list-group">
+      <li className=" mt-3 list-group-item active" aria-current="true">Notas Creadas</li>
+      {listaNotas.map((n, index) => (
+        <li className="list-group-item d-flex justify-content-between align-items-center" key={index}>
+            {n}
+         <button onClick={() => borrarNota(index)} className="btn btn-danger btn-sm">
+           Borrar
+         </button>
+        </li>
         ))}
       </ul>
     </div>
