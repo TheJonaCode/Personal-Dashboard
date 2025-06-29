@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/header";
 import Sidebar from "./components/Sidebar";
+import Notas from "./components/notas";
+
 import Dashboard from "./pages/dashboard";
 import Configuracion from "./pages/configuracion";
 
@@ -15,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/configuracion" element={<Configuracion />} />
+          <Route path="/notas" element={<Notas />} />
         </Routes>
       </div>
     </div>
