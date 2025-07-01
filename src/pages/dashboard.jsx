@@ -24,7 +24,7 @@ function Dashboard() {
         <div class="card-body">
           <h5 class="card-title">Tareas</h5>
           <p class="card-text">Crear, editar y eliminar notas importantes de la semana.</p>
-          <a href="#" class="btn btn-primary">Ir a Tareas</a>
+          <a href="/Tareas" class="btn btn-primary">Ir a Tareas</a>
         </div>
         </div>
       </div>

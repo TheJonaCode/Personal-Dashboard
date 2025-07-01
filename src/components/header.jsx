@@ -9,7 +9,7 @@ function Header() {
             <a className="mx-5 nav-link active" aria-current="page" href="/Clima">
               Clima
             </a>
-            <a className="nav-link active" aria-current="page" href="#">
+            <a className="nav-link active" aria-current="page" href="/Tareas">
               Tareas
             </a>
           </div>

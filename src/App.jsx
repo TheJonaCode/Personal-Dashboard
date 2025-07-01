@@ -6,6 +6,7 @@ import Notas from "./pages/Notas";
 import Clima from "./pages/Clima";
 import Dashboard from "./pages/dashboard";
 import Configuracion from "./pages/configuracion";
+import Tareas from "./pages/Tareas";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/configuracion" element={<Configuracion />} />
           <Route path="/notas" element={<Notas />} />
           <Route path="/clima" element={<Clima />} />
+          <Route path="/tareas" element={<Tareas />} />
         </Routes>
       </div>
     </div>
