@@ -6,7 +6,7 @@ function Header() {
             <a className="nav-link active" aria-current="page" href="/Notas">
               Notas
             </a>
-            <a className="mx-5 nav-link active" aria-current="page" href="#">
+            <a className="mx-5 nav-link active" aria-current="page" href="/Clima">
               Clima
             </a>
             <a className="nav-link active" aria-current="page" href="#">

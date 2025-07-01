@@ -1,5 +1,3 @@
-import Notas from "../components/notas";
-
 function Dashboard() {
  return (
     <div>
@@ -18,7 +16,7 @@ function Dashboard() {
         <div class="card-body">
           <h5 class="card-title">Clima</h5>
           <p class="card-text">Visualiza el clima exacto en la ciudad o país que necesites.</p>
-          <a href="#" class="btn btn-primary">Ir a Clima</a>
+          <a href="/Clima" class="btn btn-primary">Ir a Clima</a>
         </div>
       </div>
       <div class="card w-25">
