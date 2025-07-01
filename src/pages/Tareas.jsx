@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 function Tareas() {
   const [tarea, setTarea] = useState("");
   const [listaTareas, setListaTareas] = useState([]);
+  const [filtro, setFiltro] = useState("todas");
+
 
   // Cargar tareas guardadas
   useEffect(() => {
@@ -34,6 +36,13 @@ function Tareas() {
     setListaTareas(nuevasTareas);
   };
 
+  const obtenerTareasFiltradas = () => {
+  if (filtro === "completadas") return listaTareas.filter(t => t.completada);
+  if (filtro === "pendientes") return listaTareas.filter(t => !t.completada);
+  return listaTareas;
+};
+
+
   return (
     <div className="container mt-4">
       <h2>Gestión de Tareas</h2>
@@ -43,26 +52,40 @@ function Tareas() {
         <button onClick={agregarTarea} className="btn btn-primary"> Agregar </button>
       </div>
 
+      <div className="btn-group mb-3">
+      <button onClick={() => setFiltro("todas")} className={`btn btn-outline-primary ${filtro === "todas" ? "active" : ""}`}>
+        Todas
+      </button>
+      <button onClick={() => setFiltro("pendientes")} className={`btn btn-outline-warning ${filtro === "pendientes" ? "active" : ""}`}>
+        Pendientes
+      </button>
+      <button onClick={() => setFiltro("completadas")} className={`btn btn-outline-success ${filtro === "completadas" ? "active" : ""}`}>
+        Completadas
+      </button>
+      </div>
+
+
       <ul className="list-group">
-        {listaTareas.map((t, index) => (
-          <li
+        {obtenerTareasFiltradas().map((t, index) => (
+            <li
             key={index}
             className={`list-group-item d-flex justify-content-between align-items-center ${
-              t.completada ? "list-group-item-success text-decoration-line-through" : ""
+                t.completada ? "list-group-item-success text-decoration-line-through" : ""
             }`}
-          >
+            >
             {t.texto}
             <div>
-              <button onClick={() => completarTarea(index)} className="btn btn-sm btn-success me-2">
+                <button onClick={() => completarTarea(index)} className="btn btn-sm btn-success me-2">
                 {t.completada ? "Desmarcar" : "Completar"}
-              </button>
-              <button onClick={() => eliminarTarea(index)} className="btn btn-sm btn-danger">
+                </button>
+                <button onClick={() => eliminarTarea(index)} className="btn btn-sm btn-danger">
                 Borrar
-              </button>
+                </button>
             </div>
-          </li>
+            </li>
         ))}
-      </ul>
+        </ul>
+
     </div>
   );
 }
