@@ -9,11 +9,6 @@ function Sidebar() {
             Inicio
           </a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/configuracion">
-            Configuración
-          </a>
-        </li>
       </ul>
     </nav>
   );
