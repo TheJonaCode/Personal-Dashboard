@@ -23,5 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-#Weather API
-VITE_API_KEY=9e72d9cc00bcf04e6363fac694e4f2f3
+
+.env
