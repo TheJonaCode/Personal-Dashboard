@@ -1,7 +1,6 @@
 function Dashboard() {
  return (
     <div>
-      <h2>My Personal Dashboard</h2>
       <div className="mt-4 container-fluid d-flex justify-content-center">
       <div class="card w-25">
         <img src="https://img.freepik.com/free-vector/notes-concept-illustration_114360-689.jpg" class="card-img-top" alt="..."/>

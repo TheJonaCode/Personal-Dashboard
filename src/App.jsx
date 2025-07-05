@@ -11,11 +11,10 @@ import Tareas from "./pages/Tareas";
 function App() {
   return (
     <BrowserRouter>
-  <div style={{ display: "flex", flexDirection: "column", height: "100vh", width: "100%" }}>
+<div className="container-fluid p-0 min-vh-100 d-flex flex-column">
     <Header />
-    <div style={{ display: "flex", flex: 1 }}>
-      <Sidebar />
-      <div style={{ flex: 1, padding: "1rem", overflowY: "auto" }}>
+      <main className="flex-grow-1 d-flex justify-content-center align-items-start p-3">
+    <div className="w-100" style={{ maxWidth: "800px" }}>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/configuracion" element={<Configuracion />} />
@@ -23,8 +22,8 @@ function App() {
           <Route path="/clima" element={<Clima />} />
           <Route path="/tareas" element={<Tareas />} />
         </Routes>
-      </div>
     </div>
+    </main>
   </div>
 </BrowserRouter>
   );
